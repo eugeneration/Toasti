@@ -12,13 +12,16 @@
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
-  limitations under the License.
+  limitations under the License.
 -->
 <resources>
 
-    <!-- Define a standard holo blue color. Useful as we can refer to it from various other
+    <!--
+         Define a standard holo blue color. Useful as we can refer to it from various other
          resource files or even code and it only needs to be updated in one place if we wanted
-         to change it. -->
+         to change it.
+    -->
     <color name="holo_blue">#FF33B5E5</color>
+    <color name="black_overlay">#66000000</color>
 
 </resources>
