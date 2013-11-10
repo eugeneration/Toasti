@@ -23,6 +23,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 import com.example.Toasti.BuildConfig;
+import com.example.Toasti.CallActivity;
 import com.example.Toasti.R;
 import com.example.Toasti.R.bool;
 import com.example.Toasti.R.id;
@@ -108,7 +109,7 @@ public class ContactsListActivity extends FragmentActivity implements
         } else {
             // Otherwise single pane layout, start a new ContactDetailActivity with
             // the contact Uri
-            Intent intent = new Intent(this, ContactDetailActivity.class);
+            Intent intent = new Intent(this, CallActivity.class);
             intent.setData(contactUri);
             startActivity(intent);
         }

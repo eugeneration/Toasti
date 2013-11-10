@@ -18,15 +18,19 @@ public class CallActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_call);
 		
-		LinearLayout animationTarget = (LinearLayout) this.findViewById(R.id.linear);
-        animationTarget.startAnimation( 
-        	    AnimationUtils.loadAnimation(this, R.anim.rotate_indefinitely) );
+		
         
         final Context mContext = (Context) this;
-		new CountDownTimer(60000, 1000) {
+		new CountDownTimer(20000, 1000) {
+			
 			TextView mTextField = (TextView) findViewById(R.id.textView1);
 
 		     public void onTick(long millisUntilFinished) {
+		    	 LinearLayout animationTarget = (LinearLayout) findViewById(R.id.linear);
+		         animationTarget.startAnimation( 
+		         	    AnimationUtils.loadAnimation(mContext, R.anim.rotate_indefinitely) );
+		    	 
+		    	 
 		         mTextField.setText("Seconds remaining: " + millisUntilFinished / 1000);
 		         if((millisUntilFinished/1000) %2 == 0) {
 		             int x = (int) (Math.random()*900 );
@@ -39,10 +43,15 @@ public class CallActivity extends Activity {
 		             animationTarget2.startAnimation( 
 		             	AnimationUtils.loadAnimation(mContext, R.anim.translate_up) );
 		         }
+		         if((millisUntilFinished/1000) == 2) {
+		             
+		             animationTarget.startAnimation( 
+		             	AnimationUtils.loadAnimation(mContext, R.anim.translate) );
+		         }
 		     }
 		     
 		     public void onFinish() {
-		         mTextField.setText("done!");
+		         mTextField.setText("Done!");
 		     }
 		  }.start();
 	}
