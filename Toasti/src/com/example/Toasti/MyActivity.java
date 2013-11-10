@@ -7,9 +7,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+<<<<<<< HEAD
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+=======
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
+import android.widget.Button;
+import android.widget.ImageView;
+>>>>>>> 23a1e90ddd8f69ace1dcc309c40a3fafcffe5241
 
 public class MyActivity extends Activity {
     /**
@@ -30,7 +37,10 @@ public class MyActivity extends Activity {
         mContactsListView = (ListView) findViewById(R.id.contacts_list);
         
         
+<<<<<<< HEAD
         // temporary button
+=======
+>>>>>>> 23a1e90ddd8f69ace1dcc309c40a3fafcffe5241
         final Button button = (Button) findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
