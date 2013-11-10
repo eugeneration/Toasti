@@ -3,6 +3,9 @@ package com.example.Toasti;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class CallActivity extends Activity {
@@ -12,6 +15,11 @@ public class CallActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_call);
 		
+		LinearLayout animationTarget = (LinearLayout) this.findViewById(R.id.linear);
+
+        animationTarget.startAnimation( 
+        	    AnimationUtils.loadAnimation(this, R.anim.rotate_indefinitely) );
+        
 		new CountDownTimer(60000, 1000) {
 			TextView mTextField = (TextView) findViewById(R.id.textView1);
 
