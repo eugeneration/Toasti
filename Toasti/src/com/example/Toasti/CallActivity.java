@@ -2,16 +2,29 @@ package com.example.Toasti;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.widget.TextView;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Eugene
- * Date: 11/9/13
- * Time: 4:40 PM
- * To change this template use File | Settings | File Templates.
- */
 public class CallActivity extends Activity {
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_call);
+		
+		new CountDownTimer(60000, 1000) {
+			TextView mTextField = (TextView) findViewById(R.id.textView1);
+
+		     public void onTick(long millisUntilFinished) {
+		         mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
+		     }
+
+		     public void onFinish() {
+		         mTextField.setText("done!");
+		     }
+		  }.start();
+	}
+
+	
+
 }
