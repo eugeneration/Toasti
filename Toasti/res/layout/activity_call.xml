@@ -2,19 +2,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".CallActivity" >
-
+    tools:context=".CallActivity"
+    android:background="#B1D9E5" >
+    
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+	    android:layout_alignParentLeft="true" 
+	    android:layout_alignParentTop="true" 
+	    android:layout_alignParentBottom="true" />
+    
     <TextView android:text="TextView" 
         android:id="@+id/textView1" 
         android:layout_width="wrap_content" 
         android:layout_height="wrap_content"
          android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:textSize="30sp">
+        android:textSize="30sp"
+        android:visibility="invisible">
     </TextView>
 
     <LinearLayout
@@ -28,7 +35,8 @@
 	        android:id="@+id/imageView1"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:src="@drawable/me" />
+	        android:src="@drawable/me"
+	        android:visibility="invisible" />
     </LinearLayout>
 
     <ImageView
@@ -47,6 +55,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:scaleType="fitXY"
-        android:src="@drawable/hangup" />
+        android:src="@drawable/hangup"
+        android:visibility="invisible" 
+        android:background="@null"
+        android:onClick="hangup"/>
 
 </RelativeLayout>
